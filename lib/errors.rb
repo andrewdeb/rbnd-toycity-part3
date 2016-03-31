@@ -1,4 +1,3 @@
-
 class StandardErrors
 
 class DuplicateCustomerError < StandardErrors

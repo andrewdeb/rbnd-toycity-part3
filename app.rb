@@ -1,14 +1,14 @@
-require_relative "D:/Udacity/rbnd-toycity-part3/lib/errors"
-require_relative "D:/Udacity/rbnd-toycity-part3/lib/customer"
-require_relative "D:/Udacity/rbnd-toycity-part3/lib/product"
-require_relative "D:/Udacity/rbnd-toycity-part3/lib/transaction"
+require_relative "/lib/errors"
+require_relative "lib/customer"
+require_relative "/lib/product"
+require_relative "/lib/transaction"
 
 
 # PRODUCTS
 
-Product.new(title: "LEGO Iron Man vs. Ultron", price: 22.99, stock: 55)
-Product.new(title: "Nano Block Empire State Building", price: 49.99, stock: 12)
-Product.new(title: "LEGO Firehouse Headquarter", price: 199.99, stock: 0)
+Product.new(title: "LEGO Iron Man vs. Ultron", price: 22.99, stock: 55, brand:"LEGO")
+Product.new(title: "Nano Block Empire State Building", price: 49.99, stock: 12, brand:"Nanoblock")
+Product.new(title: "LEGO Firehouse Headquarter", price: 199.99, stock: 0, brand:"LEGO")
 
 puts Product.all.count # Should return 3
 
@@ -65,3 +65,10 @@ puts transaction2.product == nanoblock # Should return true
 
 walter.purchase(firehouse)
 # Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
+
+#test new brand functionality
+puts "Nanoblock brand : #{nanoblock.brand}"
+puts "Firehouse brand : #{firehouse.brand}"
+
+#test time of purchase functionality
+puts transaction2.time_of_purchase

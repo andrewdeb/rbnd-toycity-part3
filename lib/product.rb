@@ -1,15 +1,17 @@
-require_relative "D:/Udacity/rbnd-toycity-part3/lib/errors"
+require_relative "/lib/errors"
 
 class Product 
-    attr_reader :title, :price, :stock
+    attr_reader :title, :price, :stock, :brand
     
     @@products = []
     
     #initialize function - new product has a title,price,stock qty and is added if add_to_product finds no duplicate
+    #also added new feature - brand
     def initialize(options={})
         @title = options[:title]
         @price = options[:price]
         @stock = options[:stock]
+        @brand = options[:brand] #new feature
         add_to_products
     end
     
@@ -22,9 +24,7 @@ class Product
         @@products.select {|p| p.in_stock?} 
     end
     
-    def self.list
-        @@products.sort_by(&:title)
-    end
+
     
     #method to check if stock variable >0
     def in_stock?
@@ -36,12 +36,7 @@ class Product
         @stock -= 1
     end
     
-    #method to calculate stock value
-    def self.total_stock_value
-        @@products.reduce(0) do |sum, product|
-            sum + product.stock * product.price
-        end
-    end
+    
     
     private 
     

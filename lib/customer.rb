@@ -1,3 +1,5 @@
+require_relative "lib/errors"
+
 class Customer  
     attr_reader :name
     
@@ -12,14 +14,14 @@ class Customer
         @@customers
     end
     
-    def purchase(product)
+    #method to purchase a product -customer name and product name needed. Calls on Transaction file
+    def purchase(product) 
         Transaction.new(self, product)
     end
     
-    def self.list
-        @@customers.sort_by(&:name)
-    end
     
+
+    #private methods below
     private
     
     #method to run through the customers variable and check to see if the name exists
@@ -29,11 +31,11 @@ class Customer
     
     #method to add a customer, if the customer is not a duplicate
     def add_a_customer
-        customer = self.class.find_by_name(@name)
-        if customer 
-            puts " DuplicateCustomerError, #{name} already exists."
-        else 
-            @@customers << self 
+        if Customer.find_by_name(@name).nil?
+        @@customers << self
+            else puts "DuplicateCustomerError, '#{@name}' already exists."
         end
+  
+        
     end
 end

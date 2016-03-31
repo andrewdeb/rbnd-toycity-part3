@@ -1,5 +1,5 @@
 class Transaction
-    attr_reader :id, :customer, :product
+    attr_reader :id, :customer, :product, :time_of_purchase
     
     @@count = 1 
     @@transactions = []
@@ -9,6 +9,7 @@ class Transaction
         @@count += 1 
         @customer = customer
         @product = product
+        @time_of_purchase = Time.now
         add_to_transactions 
     end
     

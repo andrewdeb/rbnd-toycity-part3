@@ -1,0 +1,12 @@
+1. How long did you spend working on this project?
+Around 10 hours
+
+2.What was the most rewarding challenge you conquered?
+Adding the brand functionality to the code.
+
+3.What 2 additional features did you build? Why?
+3.1 Brand has been added as one of the variables in the Product class. It is always important to track brand sales in the retail environment.
+3.2 Time of purchase has been added in the Transaction code. It is an important auditing feature to be able to track the time of purchase - there may be queries from customers later and the exact date and time will be useful.
+
+4.Where do you still have room to grow?
+I still need to learn a lot about OOP and inheritance of properties.
