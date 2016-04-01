@@ -1,4 +1,4 @@
-require_relative "lib/errors"
+
 
 class Customer  
     attr_reader :name
@@ -33,7 +33,8 @@ class Customer
     def add_a_customer
         if Customer.find_by_name(@name).nil?
         @@customers << self
-            else puts "DuplicateCustomerError, '#{@name}' already exists."
+            else 
+            raise DuplicateCustomerError, "DuplicateCustomerError, '#{@name}' already exists."
         end
   
         

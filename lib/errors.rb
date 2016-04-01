@@ -1,5 +1,3 @@
-class StandardErrors
-
 class DuplicateCustomerError < StandardErrors
 end
 
@@ -9,4 +7,3 @@ end
 class DuplicateProductError< StandardErrors
 end
 
-end

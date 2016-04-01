@@ -1,4 +1,4 @@
-require_relative "/lib/errors"
+
 
 class Product 
     attr_reader :title, :price, :stock, :brand
@@ -49,7 +49,7 @@ class Product
     def add_to_products
         product = self.class.find_by_title(@title)
         if product
-            puts " DuplicateProductError, #{title}' already exists."
+            raise DuplicateProductError, " DuplicateProductError, #{title}' already exists."
         else
             @@products << self 
         end
