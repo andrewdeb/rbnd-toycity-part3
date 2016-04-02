@@ -1,9 +1,9 @@
-class DuplicateCustomerError < StandardErrors
+class DuplicateCustomerError < StandardError
 end
 
-class OutOfStockError < StandardErrors
+class OutOfStockError < StandardError
 end
 
-class DuplicateProductError< StandardErrors
+class DuplicateProductError< StandardError
 end
 

@@ -15,12 +15,14 @@ class Customer
     end
     
     #method to purchase a product -customer name and product name needed. Calls on Transaction file
-    def purchase(product) 
+    def purchase(product)
+        if @product.stock == 0 
+            raise OutOfStockError, " OutOfStockError, #{@product.title} is out of stock."
+        else 
         Transaction.new(self, product)
+        end
     end
     
-    
-
     #private methods below
     private
     
@@ -32,11 +34,10 @@ class Customer
     #method to add a customer, if the customer is not a duplicate
     def add_a_customer
         if Customer.find_by_name(@name).nil?
-        @@customers << self
-            else 
-            raise DuplicateCustomerError, "DuplicateCustomerError, '#{@name}' already exists."
-        end
-  
-        
+          @@customers << self
+         else 
+          raise DuplicateCustomerError, "DuplicateCustomerError, '#{@name}' already exists."
+        end        
     end
+
 end
