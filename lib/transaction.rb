@@ -18,9 +18,9 @@ class Transaction
     end
     
     #method to find a transaction, based on the id
-    #def self.find(id)
-     #   @@transactions.find {|p| p.id == id} 
-    #end
+    def self.find(id)
+       @@transactions.find {|p| p.id == id} 
+    end
 
 
     private

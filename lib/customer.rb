@@ -16,8 +16,8 @@ class Customer
     
     #method to purchase a product -customer name and product name needed. Calls on Transaction file
     def purchase(product)
-        if @product.stock == 0 
-            raise OutOfStockError, " OutOfStockError, #{@product.title} is out of stock."
+        if product.stock == 0 
+            raise OutOfStockError, " OutOfStockError, #{product.title} is out of stock."
         else 
         Transaction.new(self, product)
         end
